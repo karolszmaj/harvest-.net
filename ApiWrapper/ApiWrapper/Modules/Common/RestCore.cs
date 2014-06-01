@@ -75,6 +75,21 @@ namespace Harvest.Modules.Common
             return ExecuteRequestAsync<T>(resource, HttpMethodType.Post, data);
         }
 
+        protected Task PostAsync(string resource, object data = null)
+        {
+            return ExecuteRequestAsync(resource, HttpMethodType.Post, data);
+        }
+
+        protected Task<T> DeleteAsync<T>(string resource, object data = null)
+        {
+            return ExecuteRequestAsync<T>(resource, HttpMethodType.Delete, data);
+        }
+
+        protected Task DeleteAsync(string resource, object data = null)
+        {
+            return ExecuteRequestAsync(resource, HttpMethodType.Delete, data);
+        }
+
         private string GetAuthorizationToken()
         {
             string result = string.Empty;

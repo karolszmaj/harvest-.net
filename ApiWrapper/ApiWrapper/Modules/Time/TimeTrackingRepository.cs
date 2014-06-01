@@ -31,5 +31,15 @@ namespace Harvest.Modules.Time
         {
             return PostAsync<DayTaskItem>("daily/add", entry);
         }
+
+        public Task DeleteEntryAsync(long entryId)
+        {
+            return DeleteAsync(string.Format("daily/delete/{0}", entryId));
+        }
+
+        public Task UpdateEntryAsync(long entryId, CreateEntryRequest entry)
+        {
+            return PostAsync<DayTaskItem>(string.Format("daily/update/{0}", entryId), entry);
+        }
     }
 }
