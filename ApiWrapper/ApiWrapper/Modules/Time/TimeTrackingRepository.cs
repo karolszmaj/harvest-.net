@@ -22,7 +22,7 @@ namespace Harvest.Modules.Time
             return GetAsync<DayTaskItem>(string.Format("daily/show/{0}", entryId));
         }
 
-        public Task<DayTaskItem> StartTimerForTask(long entryId)
+        public Task<DayTaskItem> ToogleTimerForEntryAsync(long entryId)
         {
             return GetAsync<DayTaskItem>(string.Format("daily/timer/{0}", entryId));
         }
