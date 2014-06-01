@@ -37,15 +37,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config.cs" />
+    <Compile Include="DTO\Company.cs" />
     <Compile Include="DTO\DayTaskItem.cs" />
     <Compile Include="DTO\ExternalReference.cs" />
+    <Compile Include="DTO\Module.cs" />
     <Compile Include="DTO\Project.cs" />
     <Compile Include="DTO\TaskDto.cs" />
+    <Compile Include="DTO\User.cs" />
+    <Compile Include="DTO\UserPrivileges.cs" />
     <Compile Include="Extensions\HttpWebRequestEx.cs" />
     <Compile Include="HarvestRepository.cs" />
     <Compile Include="IHarvestRepository.cs" />
     <Compile Include="Models\CreateEntryRequest.cs" />
     <Compile Include="Models\TimeResponse.cs" />
+    <Compile Include="Models\UserResponse.cs" />
     <Compile Include="Modules\Account\AccountRepository.cs" />
     <Compile Include="Modules\Account\IAccountRepository.cs" />
     <Compile Include="Modules\Common\AuthType.cs" />
