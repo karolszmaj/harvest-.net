@@ -10,7 +10,7 @@ namespace Harvest.DTO
     public class DayTaskItem
     {
         [JsonProperty("project_id")]
-        public string ProjectId { get; set; }
+        public long ProjectId { get; set; }
         public string Project { get; set; }
         [JsonProperty("user_id")]
         public int UserId { get; set; }

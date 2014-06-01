@@ -26,5 +26,10 @@ namespace Harvest.Modules.Time
         {
             return GetAsync<DayTaskItem>(string.Format("daily/timer/{0}", entryId));
         }
+
+        public Task<DayTaskItem> CreateNewEntryAsync(CreateEntryRequest entry)
+        {
+            return PostAsync<DayTaskItem>("daily/add", entry);
+        }
     }
 }

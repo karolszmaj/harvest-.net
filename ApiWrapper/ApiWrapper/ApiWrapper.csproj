@@ -44,6 +44,7 @@
     <Compile Include="Extensions\HttpWebRequestEx.cs" />
     <Compile Include="HarvestRepository.cs" />
     <Compile Include="IHarvestRepository.cs" />
+    <Compile Include="Models\CreateEntryRequest.cs" />
     <Compile Include="Models\TimeResponse.cs" />
     <Compile Include="Modules\Account\AccountRepository.cs" />
     <Compile Include="Modules\Account\IAccountRepository.cs" />

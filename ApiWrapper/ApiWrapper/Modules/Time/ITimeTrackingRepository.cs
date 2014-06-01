@@ -14,6 +14,6 @@ namespace Harvest.Modules.Time
         Task<TimeResponse> GetEntriesAsync(DateTime date);
         Task<DayTaskItem> GetSingleEntryAsync(long entryId);
         Task<DayTaskItem> ToogleTimerForEntryAsync(long entryId);
-
+        Task<DayTaskItem> CreateNewEntryAsync(CreateEntryRequest entry);
     }
 }
