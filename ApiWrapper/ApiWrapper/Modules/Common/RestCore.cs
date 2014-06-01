@@ -23,10 +23,11 @@ namespace Harvest.Modules.Common
                 request.Headers["Authorization"] = GetAuthorizationToken();
                 request.Method = requestMethod.ToString().ToUpper();
                 request.Accept = "application/json";
-                request.ContentType = "application/json";
+                
 
                 if (body != null)
                 {
+                    request.ContentType = "application/json";
                     var json = JsonConvert.SerializeObject(body, new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore });
                     byte[] formData = UTF8Encoding.UTF8.GetBytes(json);
 
@@ -35,7 +36,7 @@ namespace Harvest.Modules.Common
                     dataStream.Dispose();
                 }
 
-                HttpWebResponse response = (HttpWebResponse)await request.GetResponseAsync();
+                HttpWebResponse response = (HttpWebResponse) await request.GetResponseAsync().ConfigureAwait(false);
                 var responseStream = response.GetResponseStream();
                 var reader = new StreamReader(responseStream);
                 string responseFromServer = reader.ReadToEnd();
