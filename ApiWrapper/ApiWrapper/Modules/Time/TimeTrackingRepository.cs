@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Harvest.DTO;
 using Harvest.Models;
 using Harvest.Modules.Common;
 
@@ -16,9 +17,9 @@ namespace Harvest.Modules.Time
             return GetAsync<TimeResponse>(string.Format("daily/{0}/{1}", date.DayOfYear, date.Year));
         }
 
-        public System.Threading.Tasks.Task<object> GetSingleEntryAsync(int entryId)
+        public Task<DayTaskItem> GetSingleEntryAsync(long entryId)
         {
-            throw new NotImplementedException();
+            return GetAsync<DayTaskItem>(string.Format("daily/show/{0}", entryId));
         }
     }
 }
