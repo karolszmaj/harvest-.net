@@ -30,5 +30,14 @@ namespace Harvest.DTO
         public ExternalReference ExternalInfo { get; set; }
         public double HoursWithoutTimer { get; set; }
         public double Hours { get; set; }
+
+        [JsonProperty("timer_started_at")]
+        public DateTime? TimerStartedAt { get; set; }
+
+        [JsonIgnore]
+        public bool IsTimerWorkingForTask
+        {
+            get { return TimerStartedAt.HasValue; }
+        }
     }
 }

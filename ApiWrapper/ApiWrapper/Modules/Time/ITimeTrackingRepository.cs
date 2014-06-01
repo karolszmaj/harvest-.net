@@ -13,6 +13,7 @@ namespace Harvest.Modules.Time
     {
         Task<TimeResponse> GetEntriesAsync(DateTime date);
         Task<DayTaskItem> GetSingleEntryAsync(long entryId);
+        Task<DayTaskItem> StartTimerForTask(long entryId);
 
     }
 }
